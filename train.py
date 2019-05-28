@@ -112,12 +112,10 @@ def train():
           logging.info('  D_Y_loss : {}'.format(D_Y_loss_val))
           logging.info('  F_loss   : {}'.format(F_loss_val))
           logging.info('  D_X_loss : {}'.format(D_X_loss_val))
-          time.sleep(60)
 
         if step % 10000 == 0:
           save_path = saver.save(sess, checkpoints_dir + "/model.ckpt", global_step=step)
           logging.info("Model saved in file: %s" % save_path)
-          time.sleep(120)
         step += 1
 
     except KeyboardInterrupt:
